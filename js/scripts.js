@@ -5,11 +5,11 @@
 // Ejemplo salida: "Hola Camila, has llegado a San Francisco."
 
 const welcomingInspanish = data => {
-  console.log(`Hola ${data.name}, has llegado a ${data.city}`);
+	console.log(`Hola ${data.name}, has llegado a ${data.city}`);
 };
 welcomingInspanish({
-  name: 'Camila',
-  city: 'San Francisco'
+	name: 'Camila',
+	city: 'San Francisco'
 });
 
 // 2️⃣ Verificar la mayoría de edad.
@@ -19,13 +19,13 @@ welcomingInspanish({
 // Ejemplo de salida:"Abby es menor de edad" o "Abby es mayor de edad"
 
 const verificateUser = info => {
-  info.age < 18
-    ? console.log('Abby es menor de edad.')
-    : console.log('Abby es mayor de edad.');
+	info.age < 18
+		? console.log('Abby es menor de edad.')
+		: console.log('Abby es mayor de edad.');
 };
 verificateUser({
-  name: 'Abby',
-  age: 17
+	name: 'Abby',
+	age: 17
 });
 
 // 3️⃣ Macarena y los promedios:
@@ -47,29 +47,29 @@ verificateUser({
 // "El promedio de Abby es 9"
 
 const calculateStudentAverage = totalGrades => {
-  //   const sumFirstUser = totalGrades[0].grades.reduce(
-  //     (acc, number) => acc + number
-  //   );
-  //   const sumSecondUser = totalGrades[1].grades.reduce(
-  //     (acc, number) => acc + number
-  //   );
+	//   const sumFirstUser = totalGrades[0].grades.reduce(
+	//     (acc, number) => acc + number
+	//   );
+	//   const sumSecondUser = totalGrades[1].grades.reduce(
+	//     (acc, number) => acc + number
+	//   );
 
-  totalGrades.forEach(users => {
-    //es como un bucle for y recorre cada parte del ARRAY
-    const sumGrades = users.grades.reduce((acc, grade) => acc + grade);
-    const gradesAverage = sumGrades / users.grades.length;
-    console.log(`El promedio de ${users.name} es ${gradesAverage}.`);
-  });
+	totalGrades.forEach(users => {
+		//es como un bucle for y recorre cada parte del ARRAY
+		const sumGrades = users.grades.reduce((acc, grade) => acc + grade);
+		const gradesAverage = sumGrades / users.grades.length;
+		console.log(`El promedio de ${users.name} es ${gradesAverage}.`);
+	});
 };
 calculateStudentAverage([
-  {
-    name: 'Bego',
-    grades: [10, 10, 10]
-  },
-  {
-    name: 'Abby',
-    grades: [8, 9, 10]
-  }
+	{
+		name: 'Bego',
+		grades: [10, 10, 10]
+	},
+	{
+		name: 'Abby',
+		grades: [8, 9, 10]
+	}
 ]);
 
 // ## Lectura y creación
@@ -86,20 +86,20 @@ calculateStudentAverage([
 // Ejemplo de salida: {result: { even: [2, 4, 6], odd: [1, 3, 5] }}
 
 const classifyNumbers = totalNumbers => {
-  const data = { result: { even: [], odd: [] } };
+	const data = { result: { even: [], odd: [] } };
 
-  totalNumbers.numbers.forEach(number => {
-    if (number % 2 === 0) {
-      data.result.even.push(number);
-    } else {
-      data.result.odd.push(number);
-    }
-  });
-  console.log(data);
+	totalNumbers.numbers.forEach(number => {
+		if (number % 2 === 0) {
+			data.result.even.push(number);
+		} else {
+			data.result.odd.push(number);
+		}
+	});
+	console.log(data);
 };
 
 classifyNumbers({
-  numbers: [1, 2, 3, 4, 5, 6]
+	numbers: [1, 2, 3, 4, 5, 6]
 });
 
 // 5️⃣ Camila y la clasificación de edades:
@@ -111,18 +111,18 @@ classifyNumbers({
 // Ejemplo de salida:{ result: { children: [5, 12, 7], teens: [15, 17], adults: [19, 32] }}
 
 const classifyAges = totalAges => {
-  const data = { result: { children: [], teens: [], adults: [] } };
-  totalAges.ages.forEach(age => {
-    if (age < 13) {
-      data.result.children.push(age);
-    } else if (age >= 13 && age <= 17) {
-      data.result.teens.push(age);
-    } else {
-      data.result.adults.push(age);
-    }
-  });
+	const data = { result: { children: [], teens: [], adults: [] } };
+	totalAges.ages.forEach(age => {
+		if (age < 13) {
+			data.result.children.push(age);
+		} else if (age >= 13 && age <= 17) {
+			data.result.teens.push(age);
+		} else {
+			data.result.adults.push(age);
+		}
+	});
 
-  console.log(data);
+	console.log(data);
 };
 classifyAges({ ages: [5, 12, 15, 19, 32, 7, 17] });
 
@@ -134,14 +134,14 @@ classifyAges({ ages: [5, 12, 15, 19, 32, 7, 17] });
 // Actualizar la propiedad state según el color actual y mostrar: "El semáforo cambió a ..."
 
 const changeTrafficLight = light => {
-  if (light.state === 'red') {
-    light.state = 'green';
-  } else if (light.state === 'green') {
-    light.state = 'yellow';
-  } else if (light.state === 'yellow') {
-    light.state = 'red';
-  }
-  console.log(`El semáforo cambió a ${light.state}.`);
+	if (light.state === 'red') {
+		light.state = 'green';
+	} else if (light.state === 'green') {
+		light.state = 'yellow';
+	} else if (light.state === 'yellow') {
+		light.state = 'red';
+	}
+	console.log(`El semáforo cambió a ${light.state}.`);
 };
 changeTrafficLight({ state: 'green' });
 
@@ -159,6 +159,14 @@ changeTrafficLight({ state: 'green' });
 // Ejemplo de salida: {combinations: [ 'Alice Smith', 'Alice Johnson', 'Bob Smith', 'Bob Johnson' ]}
 
 const combineLists = lists => {
-  const totalCombinations = { combinations: [] };
+	const totalCombinations = { combinations: [] };
+	lists.names.forEach(name => {
+		lists.surnames.forEach(surname => {
+			if (name !== surname) {
+				totalCombinations.combinations.push(name + ' ' + surname);
+			}
+		});
+	});
+	console.log(totalCombinations);
 };
 combineLists({ names: ['Alice', 'Bob'], surnames: ['Smith', 'Johnson'] });
